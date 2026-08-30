@@ -1,498 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>حالنا يا ناس | أخبار السودان والعالم</title>
-<meta name="description" content="حالنا يا ناس — منصة إخبارية سودانية تعرض آخر الأخبار والتطورات في السودان والعالم مع ذكر مصادر الأخبار.">
-<meta name="keywords" content="السودان, أخبار السودان, حالنا يا ناس, الخرطوم, كردفان, أخبار العالم">
-
+<meta name="description" content="حالنا يا ناس - منصة إخبارية سودانية مستقلة لأهم أخبار السودان والعالم.">
 <style>
-:root{
---red:#c71925;
---dark:#111827;
---bg:#f4f6f8;
---muted:#6b7280
-}
 *{box-sizing:border-box}
-body{
-margin:0;
-font-family:Arial,Tahoma,sans-serif;
-background:var(--bg);
-color:#172033;
-line-height:1.7
-}
+body{margin:0;font-family:Arial,Tahoma,sans-serif;background:#f4f6f8;color:#172033}
 a{text-decoration:none;color:inherit}
-.wrap{width:min(1180px,94%);margin:auto}
-.top{background:var(--dark);color:#fff;font-size:13px}
-.top .wrap{
-display:flex;
-justify-content:space-between;
-padding:8px 0
-}
-header{background:#fff}
-.head{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:25px;
-padding:22px 0
-}
-.logo{
-font-size:34px;
-font-weight:900;
-color:var(--red)
-}
-.logo small{
-display:block;
-font-size:11px;
-color:#888;
-letter-spacing:2px
-}
-.search{
-display:flex;
-width:420px;
-max-width:100%
-}
-.search input{
-flex:1;
-border:1px solid #ddd;
-padding:13px;
-border-radius:8px 0 0 8px;
-outline:none
-}
-.search button{
-border:0;
-background:var(--red);
-color:#fff;
-padding:0 20px;
-border-radius:0 8px 8px 0;
-font-weight:bold
-}
-nav{background:var(--red);color:#fff}
-.nav{
-display:flex;
-overflow:auto
-}
-.nav a{
-padding:13px 18px;
-white-space:nowrap;
-font-weight:bold
-}
-.nav a:hover{background:#a90f19}
-.breaking{
-margin:18px 0;
-background:#fff;
-border-right:5px solid var(--red);
-padding:12px 16px
-}
-.breaking b{
-color:var(--red);
-margin-left:12px
-}
-.hero{
-display:grid;
-grid-template-columns:2fr 1fr;
-gap:18px
-}
-.lead{
-min-height:360px;
-border-radius:16px;
-padding:32px;
-color:#fff;
-display:flex;
-flex-direction:column;
-justify-content:end;
-background:linear-gradient(135deg,#0f172a,#475569);
-box-shadow:0 8px 25px #0002
-}
-.tag{
-display:inline-block;
-width:max-content;
-background:var(--red);
-padding:4px 12px;
-border-radius:20px;
-font-size:12px;
-margin-bottom:12px
-}
-.lead h1{
-font-size:34px;
-line-height:1.35;
-margin:0 0 10px
-}
-.side{
-display:grid;
-gap:14px
-}
-.side article,.card{
-background:#fff;
-border:1px solid #e7e9ee;
-border-radius:13px
-}
-.side article{padding:18px}
-.side h3{margin:0;font-size:18px}
-.section{margin-top:32px}
-.title{
-display:flex;
-justify-content:space-between;
-align-items:center;
-border-right:5px solid var(--red);
-padding-right:12px;
-margin-bottom:15px
-}
-.title h2{
-margin:0;
-font-size:25px
-}
-.title span{
-color:var(--muted);
-font-size:13px
-}
-.grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:16px
-}
-.card{
-overflow:hidden;
-transition:.2s
-}
-.card:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 25px #0001
-}
-.pic{
-height:150px;
-background:linear-gradient(135deg,#334155,#94a3b8);
-position:relative
-}
-.pic span{
-position:absolute;
-top:12px;
-right:12px;
-background:var(--red);
-color:#fff;
-border-radius:20px;
-padding:3px 10px;
-font-size:12px
-}
-.content{padding:16px}
-.content h3{
-font-size:19px;
-margin:0 0 7px
-}
-.summary{
-color:#4b5563;
-font-size:14px
-}
-.meta{
-color:#8b9099;
-font-size:12px;
-margin-top:10px
-}
-.source{
-font-weight:bold;
-color:#374151
-}
-.no-results{
-display:none;
-background:#fff;
-border-radius:12px;
-padding:25px;
-text-align:center;
-color:#666
-}
-footer{
-background:var(--dark);
-color:#d1d5db;
-margin-top:45px;
-padding:35px 0 18px
-}
-.foot{
-display:grid;
-grid-template-columns:2fr 1fr 1fr;
-gap:25px
-}
-.foot h3{color:#fff}
-.copy{
-text-align:center;
-border-top:1px solid #374151;
-margin-top:25px;
-padding-top:15px;
-font-size:12px
-}
-@media(max-width:800px){
-.head{
-flex-direction:column;
-align-items:stretch
-}
-.logo{text-align:center}
-.hero{grid-template-columns:1fr}
-.grid{grid-template-columns:1fr}
-.lead{min-height:290px}
-.lead h1{font-size:27px}
-.foot{grid-template-columns:1fr}
-.top .wrap{font-size:11px}
-}
+.container{width:min(1120px,94%);margin:auto}
+header{background:#111827;color:#fff;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px #0002}
+.top{padding:18px 0;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.logo{font-size:28px;font-weight:800}.logo span{color:#c71925}
+.tag{font-size:13px;color:#cbd5e1}
+nav{background:#c71925;color:#fff}
+nav .container{display:flex;gap:4px;overflow:auto}
+nav a{padding:12px 15px;white-space:nowrap;font-weight:bold}
+nav a:hover{background:#991b1b}
+.breaking{margin:18px 0;background:#fff;border-right:5px solid #c71925;border-radius:10px;padding:14px;box-shadow:0 2px 10px #0000000d}
+.breaking b{color:#c71925;margin-left:12px}
+.hero{display:grid;grid-template-columns:2fr 1fr;gap:18px;margin-bottom:22px}
+.card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px #00000012}
+.hero-main{padding:30px;min-height:330px;background:linear-gradient(135deg,#111827,#334155);color:#fff;display:flex;flex-direction:column;justify-content:end}
+.label{display:inline-block;background:#c71925;color:#fff;padding:6px 10px;border-radius:5px;font-size:12px;font-weight:bold;width:max-content}
+h1{font-size:34px;margin:14px 0 8px;line-height:1.25}
+.hero-main p{color:#e5e7eb;font-size:16px}
+.side{padding:20px}.side h2,.section-title{margin-top:0;border-right:4px solid #c71925;padding-right:10px}
+.news{padding:14px 0;border-bottom:1px solid #e5e7eb}.news:last-child{border:0}
+.news h3{margin:6px 0;font-size:17px}.date{font-size:12px;color:#6b7280}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:25px}
+.article{padding:20px;min-height:190px}.article h3{font-size:19px;margin:10px 0}
+footer{margin-top:35px;background:#111827;color:#cbd5e1;padding:30px 0;text-align:center}
+footer strong{color:#fff;font-size:20px}
+@media(max-width:800px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}h1{font-size:28px}.top{align-items:flex-start;flex-direction:column}}
 </style>
 </head>
 <body>
-  <div class="top">
-  <div class="wrap">
-    <span>حالنا يا ناس — الخبر من الناس وللناس</span>
-    <span id="date"></span>
-  </div>
-</div>
-
 <header>
-  <div class="wrap head">
-    <div class="logo">
-      حالنا يا ناس
-      <small>HALNA YA NAS</small>
-    </div>
-
-    <form class="search" onsubmit="return searchNews()">
-      <input id="searchInput" type="search" placeholder="ابحث في الأخبار...">
-      <button type="submit">بحث</button>
-    </form>
-  </div>
+<div class="container top">
+<div class="logo">حالنا <span>يا ناس</span></div>
+<div class="tag">أخبار السودان والعالم أولاً بأول</div>
+</div>
+<nav><div class="container">
+<a href="#home">الرئيسية</a><a href="#sudan">السودان</a><a href="#world">العالم</a><a href="#politics">سياسة</a><a href="#economy">اقتصاد</a><a href="#sports">رياضة</a>
+</div></nav>
 </header>
 
-<nav>
-  <div class="wrap nav">
-    <a href="#home">الرئيسية</a>
-    <a href="#sudan">السودان</a>
-    <a href="#politics">سياسة</a>
-    <a href="#economy">اقتصاد</a>
-    <a href="#society">مجتمع</a>
-    <a href="#sports">رياضة</a>
-    <a href="#world">العالم</a>
-    <a href="#about">عن حالنا يا ناس</a>
-  </div>
-</nav>
+<main class="container" id="home">
+<div class="breaking"><b>عاجل</b> تابع آخر التطورات والأخبار المهمة من السودان والعالم عبر «حالنا يا ناس».</div>
 
-<main class="wrap" id="home">
+<section class="hero">
+<article class="card hero-main">
+<span class="label">السودان</span>
+<h1>حالنا يا ناس — صوت الخبر السوداني</h1>
+<p>منصة إخبارية عربية تهتم بالشأن السوداني، وتقدم الأخبار والتقارير والتحليلات في قالب واضح وسريع.</p>
+</article>
+<aside class="card side">
+<h2>آخر الأخبار</h2>
+<div class="news"><span class="date">اليوم</span><h3>أهم أخبار السودان وتطورات المشهد المحلي</h3></div>
+<div class="news"><span class="date">اليوم</span><h3>متابعة لأبرز الأحداث السياسية والاقتصادية</h3></div>
+<div class="news"><span class="date">اليوم</span><h3>أخبار الجاليات السودانية حول العالم</h3></div>
+</aside>
+</section>
 
-  <div class="breaking">
-    <b>عاجل</b>
-    <span>تابع آخر التطورات والأخبار من السودان والعالم</span>
-  </div>
+<h2 class="section-title" id="sudan">أخبار السودان</h2>
+<section class="grid">
+<article class="card article"><span class="label">السودان</span><h3>تغطية شاملة لأبرز الأحداث والتطورات</h3><p>نضع الخبر السوداني في مقدمة اهتماماتنا مع تحديثات مستمرة.</p></article>
+<article class="card article" id="politics"><span class="label">سياسة</span><h3>المشهد السياسي السوداني</h3><p>قراءة ومتابعة لأهم المستجدات والقرارات والتطورات السياسية.</p></article>
+<article class="card article" id="economy"><span class="label">اقتصاد</span><h3>الاقتصاد والأسواق</h3><p>أخبار الأسعار والأسواق والأعمال والاقتصاد السوداني.</p></article>
+</section>
 
-  <section class="hero">
+<h2 class="section-title" id="world">العالم</h2>
+<section class="grid">
+<article class="card article"><span class="label">العالم</span><h3>أبرز الأخبار الدولية</h3><p>ملخص سريع لأهم الأحداث الإقليمية والدولية.</p></article>
+<article class="card article" id="sports"><span class="label">رياضة</span><h3>رياضة</h3><p>أخبار الرياضة السودانية والعربية والعالمية.</p></article>
+<article class="card article"><span class="label">مجتمع</span><h3>المجتمع السوداني</h3><p>قصص ومبادرات وأخبار تهم الناس داخل السودان وخارجه.</p></article>
+</section>
+</main>
 
-    <article class="lead">
-      <span class="tag">أبرز الأخبار</span>
-      <h1>حالنا يا ناس — صوت سوداني يتابع الخبر من الناس وإلى الناس</h1>
-      <p>
-        منصة إخبارية سودانية مستقلة تهدف إلى تقديم الأخبار بصورة واضحة وسريعة،
-        مع الاهتمام بالسودان والمنطقة والعالم.
-      </p>
-    </article>
-
-    <div class="side">
-
-      <article>
-        <span class="tag">السودان</span>
-        <h3>أخبار السودان في مكان واحد</h3>
-        <p class="summary">
-          تابع أهم الأحداث والتطورات السودانية أولاً بأول.
-        </p>
-        <div class="meta">حالنا يا ناس</div>
-      </article>
-
-      <article>
-        <span class="tag">العالم</span>
-        <h3>أهم الأخبار العالمية</h3>
-        <p class="summary">
-          أبرز الأحداث والتطورات من حول العالم.
-        </p>
-        <div class="meta">حالنا يا ناس</div>
-      </article>
-
-    </div>
-  </section>
-
-  <section class="section" id="sudan">
-
-    <div class="title">
-      <h2>أخبار السودان</h2>
-      <span>آخر الأخبار</span>
-    </div>
-
-    <div class="grid news-list">
-
-      <article class="card">
-        <div class="pic">
-          <span>السودان</span>
-        </div>
-        <div class="content">
-          <h3>السودان يتابع آخر التطورات والأحداث</h3>
-          <p class="summary">
-            تغطية مستمرة لأهم الأخبار والتطورات في مختلف أنحاء السودان.
-          </p>
-          <div class="meta">
-            المصدر: <span class="source">حالنا يا ناس</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="pic">
-          <span>الخرطوم</span>
-        </div>
-        <div class="content">
-          <h3>تطورات جديدة في المشهد السوداني</h3>
-          <p class="summary">
-            نرصد أبرز المستجدات ونقدمها للقارئ بصورة مبسطة.
-          </p>
-          <div class="meta">
-            المصدر: <span class="source">حالنا يا ناس</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="pic">
-          <span>مجتمع</span>
-        </div>
-        <div class="content">
-          <h3>أخبار المجتمع السوداني</h3>
-          <p class="summary">
-            قصص وأخبار تهم المواطن السوداني داخل السودان وخارجه.
-          </p>
-          <div class="meta">
-            المصدر: <span class="source">حالنا يا ناس</span>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <section class="section" id="politics">
-
-    <div class="title">
-      <h2>سياسة</h2>
-      <span>المشهد السياسي</span>
-    </div>
-
-    <div class="grid news-list">
-
-      <article class="card">
-        <div class="pic">
-          <span>سياسة</span>
-        </div>
-        <div class="content">
-          <h3>قراءة في المشهد السياسي السوداني</h3>
-          <p class="summary">
-            متابعة وتحليل لأبرز التطورات السياسية دون مبالغة أو تضليل.
-          </p>
-          <div class="meta">
-            المصدر: <span class="source">حالنا يا ناس</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="pic">
-          <span>سياسة</span>
-        </div>
-        <div class="content">
-          <h3>أبرز التصريحات والمواقف</h3>
-          <p class="summary">
-            نتابع التصريحات والمواقف السياسية المهمة.
-          </p>
-          <div class="meta">
-            المصدر: <span class="source">حالنا يا ناس</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="pic">
-          <span>تحليل</span>
-        </div>
-        <div class="content">
-          <h3>ما وراء الخبر</h3>
-          <p class="summary">
-            مساحة لفهم الأحداث بصورة أبسط وأوضح.
-          </p>
-          <div class="meta">
-            المصدر: <span class="source">حالنا يا ناس</span>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <div class="no-results" id="noResults">
-    لا توجد نتائج مطابقة لبحثك.
-  </div>
-  </main>
-
-<footer id="about">
-  <div class="wrap footer-grid">
-
-    <div>
-      <h3>حالنا يا ناس</h3>
-      <p>
-        منصة إخبارية سودانية تهتم بنقل الأخبار من السودان والعالم
-        بصورة واضحة وسريعة.
-      </p>
-    </div>
-
-    <div>
-      <h3>أقسام الموقع</h3>
-      <a href="#sudan">السودان</a>
-      <a href="#politics">سياسة</a>
-      <a href="#economy">اقتصاد</a>
-      <a href="#sports">رياضة</a>
-      <a href="#world">العالم</a>
-    </div>
-
-    <div>
-      <h3>تواصل معنا</h3>
-      <p>حالنا يا ناس — الخبر من الناس وللناس</p>
-      <p>© 2026 جميع الحقوق محفوظة</p>
-    </div>
-
-  </div>
+<footer>
+<div class="container"><strong>حالنا يا ناس</strong><p>أخبار السودان والعالم | منصة إخبارية مستقلة</p><small>© 2026 حالنا يا ناس — جميع الحقوق محفوظة</small></div>
 </footer>
-
-<script>
-  document.getElementById("date").textContent =
-    new Date().toLocaleDateString("ar-SD", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric"
-    });
-
-  function searchNews() {
-    const input = document.getElementById("searchInput");
-    const query = input.value.trim().toLowerCase();
-    const cards = document.querySelectorAll(".card");
-    const noResults = document.getElementById("noResults");
-
-    let found = false;
-
-    cards.forEach(card => {
-      const text = card.textContent.toLowerCase();
-
-      if (!query || text.includes(query)) {
-        card.style.display = "";
-        found = true;
-      } else {
-        card.style.display = "none";
-      }
-    });
-
-    noResults.style.display = found ? "none" : "block";
-
-    return false;
-  }
-</script>
-
 </body>
 </html>
