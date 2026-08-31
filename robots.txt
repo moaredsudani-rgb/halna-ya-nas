@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://moaredsudani-rgb.github.io/halna-ya-nas/sitemap.xml
