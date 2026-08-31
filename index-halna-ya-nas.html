@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="حالنا يا ناس - موقع إخباري عربي يهتم بالسودان والعالم.">
+  <title>حالنا يا ناس | أخبار السودان والعالم</title>
+  <style>
+    :root{
+      --ink:#111827; --muted:#64748b; --line:#e5e7eb;
+      --brand:#b91c1c; --brand2:#7f1d1d; --paper:#fff; --soft:#f8fafc;
+      --gold:#c59b42; --dark:#0b1220; --shadow:0 12px 35px rgba(15,23,42,.10);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:#f3f4f6;color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.75}
+    a{text-decoration:none;color:inherit}
+    .topline{height:4px;background:linear-gradient(90deg,var(--brand2),var(--brand),var(--gold))}
+    .container{width:min(1180px,94%);margin:auto}
+    header{background:var(--paper);border-bottom:1px solid var(--line)}
+    .head{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 0}
+    .brand{display:flex;align-items:center;gap:14px}
+    .mark{width:54px;height:54px;border-radius:14px;background:linear-gradient(145deg,var(--brand2),var(--brand));display:grid;place-items:center;color:white;font-size:25px;font-weight:900;box-shadow:var(--shadow)}
+    .brand h1{margin:0;font-size:29px;letter-spacing:-1px}
+    .brand p{margin:0;color:var(--muted);font-size:12px}
+    .date{color:var(--muted);font-size:13px}
+    nav{background:var(--dark);color:#fff}
+    nav .container{display:flex;align-items:center;gap:4px;overflow:auto}
+    nav a{padding:14px 17px;white-space:nowrap;font-size:14px;font-weight:700}
+    nav a:hover,nav a.active{background:var(--brand)}
+    .ticker{background:#fff;border-bottom:1px solid var(--line)}
+    .ticker .container{display:flex;align-items:center;gap:14px;padding:10px 0}
+    .badge{background:var(--brand);color:#fff;border-radius:4px;padding:4px 9px;font-size:12px;font-weight:800;white-space:nowrap}
+    .ticker-text{color:#475569;font-size:13px;overflow:hidden;white-space:nowrap}
+    main{padding:28px 0 50px}
+    .hero{display:grid;grid-template-columns:1.45fr .8fr;gap:20px;margin-bottom:26px}
+    .hero-main{min-height:390px;border-radius:18px;overflow:hidden;position:relative;background:
+      radial-gradient(circle at 75% 25%,rgba(197,155,66,.25),transparent 25%),
+      linear-gradient(135deg,#111827 0%,#1f2937 48%,#7f1d1d 140%);box-shadow:var(--shadow)}
+    .hero-main:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.72),transparent 60%)}
+    .hero-content{position:absolute;z-index:2;right:0;left:0;bottom:0;padding:30px;color:#fff}
+    .kicker{display:inline-block;color:#f4d58b;font-size:12px;font-weight:800;margin-bottom:8px}
+    .hero h2{font-size:32px;line-height:1.35;margin:0 0 10px;max-width:760px}
+    .hero p{margin:0;color:#e5e7eb;max-width:700px;font-size:14px}
+    .side-news{display:grid;gap:14px}
+    .mini{background:#fff;border:1px solid var(--line);border-radius:15px;padding:18px;box-shadow:0 5px 18px rgba(15,23,42,.05)}
+    .mini .kicker{color:var(--brand)}
+    .mini h3{margin:5px 0;font-size:17px;line-height:1.5}
+    .mini p{margin:0;color:var(--muted);font-size:12px}
+    .section-head{display:flex;align-items:end;justify-content:space-between;border-bottom:2px solid var(--ink);margin:28px 0 16px;padding-bottom:9px}
+    .section-head h2{margin:0;font-size:23px}
+    .section-head span{color:var(--brand);font-size:12px;font-weight:800}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:15px;overflow:hidden;box-shadow:0 5px 18px rgba(15,23,42,.05);transition:.2s}
+    .card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+    .thumb{height:155px;background:
+      linear-gradient(135deg,rgba(185,28,28,.9),rgba(15,23,42,.92)),
+      radial-gradient(circle at 20% 20%,#c59b42,transparent 30%)}
+    .thumb.t2{background:linear-gradient(135deg,#0f172a,#334155)}
+    .thumb.t3{background:linear-gradient(135deg,#7f1d1d,#b45309)}
+    .card-body{padding:16px}
+    .card .kicker{color:var(--brand);margin:0}
+    .card h3{font-size:17px;line-height:1.5;margin:5px 0 7px}
+    .card p{font-size:12px;color:var(--muted);margin:0}
+    .split{display:grid;grid-template-columns:1.25fr .75fr;gap:22px}
+    .list{background:#fff;border:1px solid var(--line);border-radius:15px;overflow:hidden}
+    .row{display:grid;grid-template-columns:1fr 150px;gap:16px;padding:16px;border-bottom:1px solid var(--line)}
+    .row:last-child{border-bottom:0}
+    .row .thumb{height:92px;border-radius:10px}
+    .row h3{margin:0 0 4px;font-size:15px}
+    .row p{margin:0;color:var(--muted);font-size:12px}
+    .quote{background:var(--dark);color:#fff;border-radius:15px;padding:25px;min-height:100%;display:flex;flex-direction:column;justify-content:center}
+    .quote strong{color:#f4d58b;font-size:12px}
+    .quote h3{font-size:22px;line-height:1.6;margin:10px 0}
+    .newsletter{margin-top:28px;background:linear-gradient(135deg,#111827,#7f1d1d);color:#fff;border-radius:18px;padding:26px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+    .newsletter h3{margin:0 0 4px;font-size:20px}.newsletter p{margin:0;color:#d1d5db;font-size:12px}
+    .btn{border:0;background:#fff;color:var(--brand2);font-weight:900;padding:11px 18px;border-radius:8px;cursor:pointer}
+    footer{background:#0b1220;color:#cbd5e1;padding:35px 0;margin-top:0}
+    .foot{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
+    .foot strong{color:#fff;font-size:18px}.foot p{font-size:12px;margin:6px 0}
+    .copy{border-top:1px solid #253044;margin-top:22px;padding-top:18px;font-size:11px;color:#94a3b8}
+    @media(max-width:850px){
+      .hero,.split{grid-template-columns:1fr}.hero-main{min-height:330px}.hero h2{font-size:26px}.grid{grid-template-columns:repeat(2,1fr)}
+      .date{display:none}
+    }
+    @media(max-width:560px){
+      .head{padding:17px 0}.brand h1{font-size:23px}.mark{width:45px;height:45px;font-size:20px}
+      nav a{padding:12px 13px;font-size:13px}.hero-main{min-height:300px}.hero-content{padding:20px}.hero h2{font-size:22px}
+      .grid{grid-template-columns:1fr}.row{grid-template-columns:1fr 105px}.row .thumb{height:80px}
+      .newsletter{display:block}.newsletter .btn{margin-top:15px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+
+  <header>
+    <div class="container head">
+      <a class="brand" href="#">
+        <div class="mark">ح</div>
+        <div>
+          <h1>حالنا يا ناس</h1>
+          <p>نبض السودان والعالم</p>
+        </div>
+      </a>
+      <div class="date" id="today"></div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <a class="active" href="#">الرئيسية</a>
+      <a href="#sudan">السودان</a>
+      <a href="#politics">سياسة</a>
+      <a href="#economy">اقتصاد</a>
+      <a href="#world">العالم</a>
+      <a href="#sports">رياضة</a>
+      <a href="#society">مجتمع</a>
+      <a href="#opinion">رأي</a>
+    </div>
+  </nav>
+
+  <div class="ticker">
+    <div class="container">
+      <span class="badge">عاجل</span>
+      <div class="ticker-text">تابع آخر التطورات والأخبار عبر «حالنا يا ناس» — هذه المساحة مخصصة للعناوين العاجلة.</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <section class="hero">
+        <article class="hero-main">
+          <div class="hero-content">
+            <span class="kicker">الخبر الرئيسي</span>
+            <h2>مساحة الخبر الرئيسي — ضع هنا أهم قصة تريد أن يراها القارئ أولًا</h2>
+            <p>واجهة تحريرية حديثة مصممة لتقديم أهم الأخبار بصورة واضحة وسريعة، مع إمكانية تحديث العنوان والصورة والمحتوى لاحقًا.</p>
+          </div>
+        </article>
+
+        <aside class="side-news">
+          <article class="mini">
+            <span class="kicker">السودان</span>
+            <h3>عنوان خبر مهم يظهر في العمود الجانبي</h3>
+            <p>منذ قليل · قسم الأخبار</p>
+          </article>
+          <article class="mini">
+            <span class="kicker">العالم</span>
+            <h3>عنوان ثانٍ لأبرز التطورات الإقليمية والدولية</h3>
+            <p>اليوم · حول العالم</p>
+          </article>
+          <article class="mini">
+            <span class="kicker">اقتصاد</span>
+            <h3>متابعة اقتصادية مختصرة لأهم ما يهم القارئ</h3>
+            <p>اليوم · اقتصاد</p>
+          </article>
+        </aside>
+      </section>
+
+      <section id="sudan">
+        <div class="section-head"><h2>أخبار السودان</h2><span>عرض الكل ←</span></div>
+        <div class="grid">
+          <article class="card"><div class="thumb"></div><div class="card-body"><span class="kicker">السودان</span><h3>أهم خبر سوداني — عنوان قابل للتعديل</h3><p>مقدمة قصيرة للخبر تظهر هنا لتلخيص الموضوع.</p></div></article>
+          <article class="card"><div class="thumb t2"></div><div class="card-body"><span class="kicker">سياسة</span><h3>تطور سياسي جديد — عنوان الخبر</h3><p>ملخص مختصر يساعد القارئ على فهم الخبر بسرعة.</p></div></article>
+          <article class="card"><div class="thumb t3"></div><div class="card-body"><span class="kicker">مجتمع</span><h3>من قلب المجتمع السوداني — قصة اليوم</h3><p>مساحة لمحتوى إنساني واجتماعي مميز.</p></div></article>
+        </div>
+      </section>
+
+      <section class="split" id="politics">
+        <div>
+          <div class="section-head"><h2>سياسة وتحليلات</h2><span>المزيد ←</span></div>
+          <div class="list">
+            <article class="row"><div><h3>خبر سياسي وتحليل مختصر للأحداث</h3><p>أضف هنا تفاصيل الخبر أو رابط القصة الكاملة.</p></div><div class="thumb t2"></div></article>
+            <article class="row"><div><h3>متابعة خاصة من «حالنا يا ناس»</h3><p>مساحة لتقديم خلفية وتحليل ومعلومات موثوقة.</p></div><div class="thumb"></div></article>
+            <article class="row"><div><h3>وجهات نظر وآراء حول قضية الساعة</h3><p>مقالات الرأي والتحليلات في مكان واحد.</p></div><div class="thumb t3"></div></article>
+          </div>
+        </div>
+        <aside id="opinion">
+          <div class="section-head"><h2>رأي</h2></div>
+          <div class="quote">
+            <strong>مساحة رأي</strong>
+            <h3>«هنا يمكن أن يظهر اقتباس أو عنوان مقال رأي بارز.»</h3>
+            <p>استخدم هذا القسم للمقالات والتحليلات والآراء.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="world">
+        <div class="section-head"><h2>العالم</h2><span>أحدث الأخبار ←</span></div>
+        <div class="grid">
+          <article class="card"><div class="thumb t2"></div><div class="card-body"><span class="kicker">العالم</span><h3>أبرز التطورات الدولية اليوم</h3><p>ملخص الخبر الدولي.</p></div></article>
+          <article class="card" id="economy"><div class="thumb t3"></div><div class="card-body"><span class="kicker">اقتصاد</span><h3>أسواق واقتصاد — أهم المؤشرات</h3><p>ملخص اقتصادي مختصر.</p></div></article>
+          <article class="card" id="sports"><div class="thumb"></div><div class="card-body"><span class="kicker">رياضة</span><h3>أخبار الرياضة والنتائج</h3><p>آخر المستجدات الرياضية.</p></div></article>
+        </div>
+      </section>
+
+      <section id="society" class="newsletter">
+        <div><h3>ابقَ على اطلاع</h3><p>تابع جديد «حالنا يا ناس» أولًا بأول.</p></div>
+        <button class="btn" onclick="alert('سيتم تفعيل الاشتراك بالبريد لاحقًا.')">اشترك في النشرة</button>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <div><strong>حالنا يا ناس</strong><p>منصة إخبارية عربية تهتم بالسودان والعالم.</p></div>
+      <div><strong>أقسام الموقع</strong><p>السودان · سياسة · اقتصاد · العالم · رياضة · مجتمع</p></div>
+    </div>
+    <div class="container copy">© <span id="year"></span> حالنا يا ناس — جميع الحقوق محفوظة.</div>
+  </footer>
+
+  <script>
+    const d = new Date();
+    document.getElementById('year').textContent = d.getFullYear();
+    document.getElementById('today').textContent =
+      d.toLocaleDateString('ar', {weekday:'long', year:'numeric', month:'long', day:'numeric'});
+  </script>
+</body>
+</html>
